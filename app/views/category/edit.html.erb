@@ -1,0 +1,25 @@
+<%= form_with scope: :category, url: category_update_path, locale: true do |f| %>
+
+  <div>
+    <% if @category.errors.any? %>
+      <ul>
+        <% @category.errors.full_messages.each do |message| %>
+          <li> <%= message %> </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :details %>
+    <%= f.text_field :details %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+
+<% end %>
