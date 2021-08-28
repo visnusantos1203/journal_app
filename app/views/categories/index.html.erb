@@ -1,15 +1,15 @@
 <div class='main'>
     <% @categories.each do | category | %>
-      <div >
+      <div class="sub">
         <p> <%= category.created_at.try(:to_date) %> </p>
         <p> <%= category.name %> </p>
         <p> <%= category.details %> </p>
 
-        <%= link_to 'View', category_path(category.id), method: :get%>
-        <%= link_to 'Edit', edit_category_path(category.id), method: :get%>
+        <%= link_to 'View', category_path(category.id), class: 'btn btn-outline-primary btn-sm', method: :get%>
+        <%= link_to 'Edit', edit_category_path(category.id), class: 'btn btn-outline-primary btn-sm', method: :get%>
 
         </div>
     <% end %>
 </div>
 
-<%= link_to 'Add Category', new_category_path,  method: :get%>
+<%= link_to 'Add Category', new_category_path, class: 'btn btn-outline-primary btn-lg', method: :get%>
