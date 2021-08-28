@@ -1,0 +1,15 @@
+<div class='main'>
+    <% @tasks.each do | task | %>
+      <div class="sub">
+        <p> <%= task.created_at.try(:to_date) %> </p>
+        <p> <%= task.category_id %> </p>
+        <p> <%= task.body %> </p>
+
+        <%= link_to 'View', category_task_path(task.category_id), class: 'btn btn-outline-primary btn-sm', method: :get%>
+        <%= link_to 'Edit', edit_category_task_path(task.category_id), class: 'btn btn-outline-primary btn-sm', method: :get%>
+
+        </div>
+    <% end %>
+</div>
+
+<%= link_to 'Add task', new_category_task_path, class: 'btn btn-outline-primary btn-lg', method: :get%>

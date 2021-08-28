@@ -1,0 +1,15 @@
+<div class='main'>
+    <% @categories.each do | category | %>
+      <div >
+        <p> <%= category.created_at.try(:to_date) %> </p>
+        <p> <%= category.name %> </p>
+        <p> <%= category.details %> </p>
+
+        <%= link_to 'View', category_path(category.id), method: :get%>
+        <%= link_to 'Edit', edit_category_path(category.id), method: :get%>
+
+        </div>
+    <% end %>
+</div>
+
+<%= link_to 'Add Category', new_category_path,  method: :get%>

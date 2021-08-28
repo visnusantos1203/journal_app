@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   
-  #got an error when I changed category#something -> categories#something
+  #got an error when I changed categories#something -> categories#something
   
-  get '/categories' => 'category#index' ## index
-  get '/categories/new' => 'category#new', as: 'category_new' ##new
-  get '/categories/:id' => 'category#show', as: 'category_show' ## show
-  post '/categories' => 'category#create', as: 'category_create' #create
-  get '/categories/edit/:id' => 'category#edit', as: 'category_edit' # edit
-  post '/categories/:id' => 'category#update', as: 'category_update' # edit
+  # get '/categories' => 'categories#index' ## index
+  # get '/categories/new' => 'categories#new', as: 'categories_new' ##new
+  # get '/categories/:id' => 'categories#show', as: 'categories_show' ## show
+  # post '/categories' => 'categories#create', as: 'categories_create' #create
+  # get '/categories/edit/:id' => 'categories#edit', as: 'categories_edit' # edit
+  # post '/categories/:id' => 'categories#update', as: 'categories_update' # edit
+  root 'welcome#index'
+
+  resources :categories do
+    resources :tasks
+  end
+
 end

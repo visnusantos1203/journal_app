@@ -1,4 +1,4 @@
-<%= form_with scope: :article, url: category_create_path, locale: true do |f| %>
+<%= form_with scope: :category, model: @category, method: :post, locale: true do |f| %>
 
   <div>
     <% if @category.errors.any? %>

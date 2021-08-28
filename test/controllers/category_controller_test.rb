@@ -9,8 +9,7 @@ class CategoryControllerTest < ActionDispatch::IntegrationTest
   end
   
   test 'should go to /categories/:id path' do #show
-    get category_show_path params: { category:
-                                    {id: 1}}
+    get category_show_path params: {id: 1}
 
     assert_response :success
   end
