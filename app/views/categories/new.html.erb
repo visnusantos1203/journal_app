@@ -1,6 +1,6 @@
 <%= form_with scope: :category, model: @category, locale: true do |f| %>
 
-  <div>
+  <div class="mb-3">
     <% if @category.errors.any? %>
       <ul>
         <% @category.errors.full_messages.each do |message| %>
@@ -10,11 +10,11 @@
     <% end %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
-  <div>
+  <div class="mb-3">
     <%= f.label :details %>
     <%= f.text_field :details %>
   </div>

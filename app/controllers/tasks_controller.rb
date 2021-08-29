@@ -10,8 +10,8 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = @category.task.new(task_params)
-
+    @task = Task.create(task_params)
+    @task.category_id = params[:id]
     if @task.save
       redirect_to category_tasks_path
     else
@@ -20,16 +20,28 @@ class TasksController < ApplicationController
   end
 
   def edit
-
+    @task = Task.find(params[:id])
   end
 
   def update
+    @task = Task.find(params[:id])
+
+    if @task.update(task_params)
+      redirect_to categories_path
+    else
+      render :edit
+    end
 
   end
 
   def destroy
+    @task = Task.find(params[:id])
+    @task.delete
+    @task.save
 
+    redirect_to category_tasks_path
   end
+
   private
 
   def get_category

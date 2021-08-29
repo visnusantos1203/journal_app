@@ -1,6 +1,6 @@
 <%= form_with scope: :task, model: @tasks, locale: true do |f| %>
 
-  <div>
+  <div class="mb-3">
     <% if @task.errors.any? %>
       <ul>
         <% @task.errors.full_messages.each do |message| %>
@@ -10,7 +10,7 @@
     <% end %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= f.label :body %>
     <%= f.text_field :body %>
   </div>

@@ -1,15 +1,22 @@
 <div class='main'>
+  <div class='container'>
     <% @categories.each do | category | %>
-      <div class="sub">
-        <p> <%= category.created_at.try(:to_date) %> </p>
-        <p> <%= category.name %> </p>
-        <p> <%= category.details %> </p>
-
-        <%= link_to 'View', category_path(category.id), class: 'btn btn-outline-primary btn-sm', method: :get%>
-        <%= link_to 'Edit', edit_category_path(category.id), class: 'btn btn-outline-primary btn-sm', method: :get%>
-
+      <div class="card" style="width: 17.5rem;">
+        <div class="card-img-top"> 
+          <h6> <%= category.created_at.try(:to_date) %> </h6>
+          <h4> <%= category.name %> </h4>
+          <p> <%= category.details %> </p>
         </div>
+
+        <div class="card-btn">
+          <h2> <%= link_to 'View', category_path(category.id), class: 'btn btn-outline-light btn-sm', method: :get%> </h2>
+          <h2> <%= link_to 'Edit', edit_category_path(category.id), class: 'btn btn-outline-light btn-sm', method: :get%> </h2>
+
+          <h2> <%= link_to 'Add Task', new_category_task_path(category.id), class: 'btn btn-outline-light btn-sm', method: :get%> </h2>
+        </div>
+      </div>
     <% end %>
+  </div>
+  <%= link_to 'Add Category', new_category_path, class: 'btn btn-outline-light btn-lg', method: :get%>
 </div>
 
-<%= link_to 'Add Category', new_category_path, class: 'btn btn-outline-primary btn-lg', method: :get%>

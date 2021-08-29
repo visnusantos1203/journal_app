@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # post '/categories' => 'categories#create', as: 'categories_create' #create
   # get '/categories/edit/:id' => 'categories#edit', as: 'categories_edit' # edit
   # post '/categories/:id' => 'categories#update', as: 'categories_update' # edit
-  root 'welcome#index'
+  root 'home#index'
 
   resources :categories do
     resources :tasks

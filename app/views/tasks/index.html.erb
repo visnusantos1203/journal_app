@@ -5,8 +5,8 @@
         <p> <%= task.category_id %> </p>
         <p> <%= task.body %> </p>
 
-        <%= link_to 'View', category_task_path(task.category_id), class: 'btn btn-outline-primary btn-sm', method: :get%>
-        <%= link_to 'Edit', edit_category_task_path(task.category_id), class: 'btn btn-outline-primary btn-sm', method: :get%>
+        <%= link_to 'Edit', edit_category_task_path(task.id)/edit, class: 'btn btn-outline-primary btn-sm', method: :get%>
+        <%= link_to 'Delete', category_tasks_path(task.id), class: 'btn btn-outline-primary btn-sm', method: :delete%>
 
         </div>
     <% end %>

@@ -1,0 +1,8 @@
+<div>
+  <div>
+    <p> <%= @task.created_at.try(:to_date) %> </p>
+    <p> <%= @task.body %></p>
+  </div>
+
+  <%= link_to 'Back', category_tasks_path, class: 'btn btn-outline-primary btn-sm', method: :get %>
+</div> 

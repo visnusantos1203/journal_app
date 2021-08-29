@@ -1,9 +1,11 @@
-<div>
-  <div>
-    <p> <%= @category.created_at.try(:to_date) %> </p>
-    <p> <%= @category.name %></p>
+<div  class='card-shown'>
+  <div class="card-img-top shown">
+    <h6> <%= @category.created_at.try(:to_date) %> </h6>
+    <h1> <%= @category.name %></h1>
     <p> <%= @category.details %></p>
   </div>
 
-  <%= link_to 'Back', categories_path, class: 'btn btn-outline-primary btn-sm', method: :get %>
+  <div class='card-btn'>
+    <%= link_to 'Back', categories_path, class: 'btn btn-outline-primary btn-sm', method: :get %>
+  </div>
 </div> 
