@@ -98,7 +98,8 @@
       color: white;
       text-align: justify;
       max-width: 100%;
-      height: 40ch;
+      height: auto;
+      min-height: 20ch;
     }
   }
 }
